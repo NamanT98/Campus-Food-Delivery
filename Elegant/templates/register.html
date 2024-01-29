@@ -5,10 +5,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up</title>
-    <link rel="stylesheet" href="{% static 'assets/Signup.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/Signup.css' %}" />
   </head>
   <body>
     <!-- Left component -->
+    <div className="left">
+      <div className="image">
+        <img src="{% static 'assets/delivery.jpg' %}" alt="loading" />
+      </div>
+      <div className="logo">
+        {/* <span className="logo-txt">3legant.</span> */}
+      </div>
+    </div>
     <!-- Form component -->
     <div class="right">
       <div class="title">
@@ -29,7 +37,22 @@
         <form action="register" method="POST">
           {% csrf_token %}
           <div>
-            <input type="text" name="Name" id="name" placeholder="Name" />
+            <input
+              type="text"
+              name="firstname"
+              id="name"
+              placeholder="First Name"
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="lastname"
+              id="name"
+              placeholder="Last Name"
+              required
+            />
           </div>
           <div>
             <input
@@ -37,10 +60,19 @@
               name="Username"
               id="username"
               placeholder="UserName"
+              required
+            />
+          </div>
+          <input
+              type="tel"
+              name="phone"
+              id="username"
+              placeholder="Phone"
+              required
             />
           </div>
           <div>
-            <input type="email" name="Email" id="email" placeholder="Email" />
+            <input type="email" name="Email" id="email" placeholder="Email" required/>
           </div>
           <div>
             <input
@@ -48,10 +80,11 @@
               name="Password"
               id="password"
               placeholder="Password"
+              required
             />
           </div>
           <label for="privacy">
-            <input type="checkbox" name="privacy policy" id="privacy" />
+            <input type="checkbox" name="privacy policy" id="privacy" required/>
             <div>
               <span class="labellight">I agree with </span>
               <span class="labeldark">Privacy Policy</span>

@@ -1,0 +1,265 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stores</title>
+    <link rel="stylesheet" href="{% static 'css/store.css' %}" />
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <div class="navigation-bar">
+      <div class="logo">
+        <span class="logotext"> 3legant. </span>
+      </div>
+      <div class="nav-link">
+        <a href="/" class="elements">Home</a>
+        <a href="" class="elements">Stores</a>
+        <a href="contactus" class="elements">Contact Us</a>
+      </div>
+      <div class="icons">
+        <a href="account"><img src="{% static 'assets/account.svg' %}" /></a>
+        <a href="cart"><img src="{% static 'assets/cart.svg' %}" /></a>
+      </div>
+    </div>
+    <!-- Navigation bar -->
+
+    <!-- header -->
+    <div class="pageheader">
+      <div class="imageplaceholder">
+        <img
+          src="{% static 'assets/images/istockphoto-922783734-612x612.jpg' %}"
+          class="storeimg"
+        />
+      </div>
+      <div class="title">
+        <span class="titletxt">Store Page</span>
+      </div>
+    </div>
+
+    <!-- header -->
+
+    <!-- product -->
+    <div class="products">
+      <div class="sidebar"></div>
+      <div class="grids">
+        <div class="card">
+          <div class="elements">
+            <div class="imageplaceholder">
+              <img
+                class="dishimg"
+                src="{% static 'assets/images/Paste image.png' %}"
+              />
+            </div>
+          </div>
+          <div class="bottomcontent">
+            <div class="content">
+              <div class="contenttxt">
+                <div class="ratings">
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                </div>
+                <span class="dish">Chole kulche</span>
+                <div class="price">
+                  <span class="discount">₹150</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button>Add to cart</button>
+        </div>
+
+        <div class="card">
+          <div class="elements">
+            <div class="imageplaceholder">
+              <img
+                class="dishimg"
+                src="{% static 'assets/images/fruitcake.jpg' %}"
+              />
+            </div>
+          </div>
+          <div class="bottomcontent">
+            <div class="content">
+              <div class="contenttxt">
+                <div class="ratings">
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                </div>
+                <span class="dish">fruit cake</span>
+                <div class="price">
+                  <span class="discount">₹35</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button>Add to cart</button>
+        </div>
+
+        <div class="card">
+          <div class="elements">
+            <div class="imageplaceholder">
+              <img
+                class="dishimg"
+                src="{% static 'assets/images/vegcutlet.png' %}"
+              />
+            </div>
+          </div>
+          <div class="bottomcontent">
+            <div class="content">
+              <div class="contenttxt">
+                <div class="ratings">
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                </div>
+                <span class="dish">Veg Cutlet</span>
+                <div class="price">
+                  <span class="discount">₹35</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button>Add to cart</button>
+        </div>
+
+        <div class="card">
+          <div class="elements">
+            <div class="imageplaceholder">
+              <img
+                class="dishimg"
+                src="{% static 'assets/images/Pannertikks.png' %}"
+              />
+            </div>
+          </div>
+          <div class="bottomcontent">
+            <div class="content">
+              <div class="contenttxt">
+                <div class="ratings">
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                </div>
+                <span class="dish">Panner Tikka</span>
+                <div class="price">
+                  <span class="discount">₹75</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button>Add to cart</button>
+        </div>
+
+        <div class="card">
+          <div class="elements">
+            <div class="imageplaceholder">
+              <img
+                class="dishimg"
+                src="{% static 'assets/images/pannerkabab.png' %}"
+              />
+            </div>
+          </div>
+          <div class="bottomcontent">
+            <div class="content">
+              <div class="contenttxt">
+                <div class="ratings">
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                </div>
+                <span class="dish">Panner kabab</span>
+                <div class="price">
+                  <span class="discount">₹200</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button>Add to cart</button>
+        </div>
+
+        <div class="card">
+          <div class="elements">
+            <div class="imageplaceholder">
+              <img
+                class="dishimg"
+                src="{% static 'assets/images/veggourment.png' %}"
+              />
+            </div>
+          </div>
+          <div class="bottomcontent">
+            <div class="content">
+              <div class="contenttxt">
+                <div class="ratings">
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
+                </div>
+                <span class="dish">Green gourment</span>
+                <div class="price">
+                  <span class="discount">₹250</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button>Add to cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- product -->
+
+    <!-- footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="logo-link">
+          <div class="logo-slogan">
+            <span class="logo">3legant.</span>
+            <span class="rectangle">|</span>
+            <span class="slogan">Campus delivery system</span>
+            <div class="nav">
+              <a href="/" class="navelements">Home</a>
+              <a href="" class="navelements">Stores</a>
+              <a href="contactus" class="navelements">ContactUs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        <div class="copyright">
+          <span class="light"
+            >Copyright © 2023 3legant. All rights reserved</span
+          >
+          <span>Privacy Policy</span>
+          <span>Terms of Use</span>
+        </div>
+        <div class="icons">
+          <img src="{% static 'assets/facebook.svg' %}" />
+          <img src="{% static 'assets/instagram.svg' %}" />
+          <img src="{% static 'assets/youtube.svg' %}" />
+        </div>
+      </div>
+    </footer>
+
+    <!-- footer -->
+  </body>
+</html>

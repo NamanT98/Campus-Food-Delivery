@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}" />
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <div class="navigation-bar">
+      <div class="logo">
+        <span class="logotext"> 3legant. </span>
+      </div>
+      <div class="nav-link">
+        <a href="/" class="elements">Home</a>
+        <a href="store" class="elements">Stores</a>
+        <a href="contactus" class="elements">Contact Us</a>
+      </div>
+      <div class="icons">
+        <a href="account"><img src="{% static 'assets/account.svg' %}" /></a>
+        <a href=""><img src="{% static 'assets/cart.svg' %}" /></a>
+      </div>
+    </div>
+    <!-- Navigation bar -->
+
+    <!-- cart -->
+    <div class="cart">
+      <div class="title">
+        <span class="titletxt">Cart</span>
+        <!-- Process component (HTML equivalent) goes here -->
+      </div>
+      <div class="cartcontent">
+        <form action="order" method="POST">
+          {% csrf_token %}
+          <div class="forms">
+            {% if user.is_authenticated %}
+            <div class="form">
+              <span class="formtxt">Contact Information</span>
+
+              <div class="input1">
+                <div class="input11">
+                  <label for="firstname">FIRST NAME</label>
+                  <input
+                    type="text"
+                    placeholder="{{user.first_name}}"
+                    id="firstname"
+                  />
+                </div>
+
+                <div class="input11">
+                  <label for="lastname">LAST NAME</label>
+                  <input
+                    type="text"
+                    placeholder="{{user.last_name}}"
+                    id="lastname"
+                  />
+                </div>
+              </div>
+
+              <div class="input">
+                <label for="phn">PHONE NUMBER</label>
+                <input
+                  type="text"
+                  placeholder="{{user.contact}}"
+                  id="phn"
+                  name="contact"
+                  required
+                />
+              </div>
+
+              <div class="input">
+                <label for="email">EMAIL ADDRESS</label>
+                <input type="text" placeholder="{{user.email}}" id="email" />
+              </div>
+              <div class="input">
+                <label for="street">STREET ADDRESS</label>
+                <input
+                  type="text"
+                  placeholder="Street Address"
+                  id="street"
+                  name="address"
+                  required
+                />
+              </div>
+            </div>
+            {% endif %}
+            <div class="form">
+              <span class="formtxt">Payment method</span>
+              <div class="payment-option">
+                <input
+                  type="radio"
+                  id="credit"
+                  value="cod"
+                  name="payment"
+                  class="small"
+                  required
+                />
+                <label for="credit">Cash on delivery</label>
+              </div>
+            </div>
+
+            <button type="submit">
+              <span class="buttontxt">Place Order</span>
+            </button>
+          </div>
+        </form>
+        <div class="ordersummary">
+          <span>Order Summary</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- cart -->
+
+    <!-- footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="logo-link">
+          <div class="logo-slogan">
+            <span class="logo">3legant.</span>
+            <span class="rectangle">|</span>
+            <span class="slogan">Campus delivery system</span>
+            <div class="nav">
+              <a href="/" class="navelements">Home</a>
+              <a href="store" class="navelements">Stores</a>
+              <a href="contactus" class="navelements">ContactUs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        <div class="copyright">
+          <span class="light"
+            >Copyright © 2023 3legant. All rights reserved</span
+          >
+          <span>Privacy Policy</span>
+          <span>Terms of Use</span>
+        </div>
+        <div class="icons">
+          <img src="{% static 'assets/facebook.svg' %}" />
+          <img src="{% static 'assets/instagram.svg' %}" />
+          <img src="{% static 'assets/youtube.svg' %}" />
+        </div>
+      </div>
+    </footer>
+
+    <!-- footer -->
+  </body>
+</html>
