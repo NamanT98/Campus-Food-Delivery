@@ -11,7 +11,7 @@
     <!-- Navigation bar -->
     <div class="navigation-bar">
       <div class="logo">
-        <span class="logotext"> 3legant. </span>
+        <span class="logotext"> 3legant </span>
       </div>
       <div class="nav-link">
         <a href="/" class="elements">Home</a>
@@ -43,6 +43,7 @@
                 type="text"
                 placeholder="{{user.first_name}}"
                 id="firstname"
+                readonly
               />
             </div>
 
@@ -52,21 +53,28 @@
                 type="text"
                 placeholder="{{user.last_name}}"
                 id="lastname"
+                readonly
               />
             </div>
 
             <div class="forminput">
-              <label for="displayname">Display name </label>
+              <label for="displayname">Username </label>
               <input
                 type="text"
                 placeholder="{{user.username}}"
                 id="displayname"
+                readonly
               />
             </div>
 
             <div class="forminput">
               <label for="email">Email </label>
-              <input type="email" placeholder="{{user.email}}" id="email" />
+              <input
+                type="email"
+                placeholder="{{user.email}}"
+                id="email"
+                readonly
+              />
             </div>
           </div>
           {% endif %}
@@ -113,6 +121,12 @@
               </div>
               <button type="submit">
                 <span class="savechanges">Save changes</span>
+              </button>
+              <button
+                onclick="window.location.href='logout'"
+                style="background-color: red"
+              >
+                <span class="savechanges">Logout</span>
               </button>
             </div>
           </form>
