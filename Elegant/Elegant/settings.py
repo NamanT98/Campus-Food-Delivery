@@ -123,7 +123,7 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'scrapper3498@gmail.com'
 DEFAULT_FROM_EMAIL = 'scrapper3498@gmail.com'
-EMAIL_HOST_PASSWORD = 'waeg baua itoh yjhu'
+EMAIL_HOST_PASSWORD = ''
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS=(os.path.join(BASE_DIR,'static'),)
