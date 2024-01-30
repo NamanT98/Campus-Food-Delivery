@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart</title>
     <link rel="stylesheet" href="{% static 'css/cart.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
   </head>
   <body>
     <!-- Navigation bar -->
@@ -108,6 +112,12 @@
         </form>
         <div class="ordersummary">
           <span>Order Summary</span>
+          <div class="cardproducts">
+            <div class="product">
+              <div class="shopping-cart" id="shopping-cart"></div>
+            </div>
+          </div>
+          <div id="label"></div>
         </div>
       </div>
     </div>
@@ -147,5 +157,34 @@
     </footer>
 
     <!-- footer -->
+    <script>
+      async function post(event) {
+        event.preventDefault();
+
+        const data = new FormData(event.target);
+
+        var value = Object.fromEntries(data.entries());
+        value.order = Basket;
+        console.log(value);
+        const response = await fetch("order", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(value),
+        });
+        console.log(response);
+        if (response.ok) {
+          clearCart();
+          window.location.assign(response.url);
+        } else {
+          console.error("Failed to send data");
+        }
+      }
+      const form = document.querySelector("form");
+      form.addEventListener("submit", post);
+    </script>
+    <script src="{% static 'js/data.js' %}"></script>
+    <script src="{% static 'js/cart.js' %}"></script>
   </body>
 </html>

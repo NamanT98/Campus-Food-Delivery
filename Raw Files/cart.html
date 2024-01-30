@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stores</title>
+    <link rel="stylesheet" href="cart.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <div class="navigation-bar">
+      <div class="logo">
+        <span class="logotext"> 3legant. </span>
+      </div>
+      <div class="nav-link">
+        <a href="homepage.html" class="elements">Home</a>
+        <a href="store.html" class="elements">Stores</a>
+        <a href="contactus.html" class="elements">Contact Us</a>
+      </div>
+      <div class="icons">
+        <a href="account.html"><img src="assests/account.svg" /></a>
+        <a href="#"><img src="assests/cart.svg" /></a>
+      </div>
+    </div>
+    <!-- Navigation bar -->
+
+    <!-- cart -->
+    <div class="cart">
+      <div class="title">
+        <span class="titletxt">Cart</span>
+        <!-- Process component (HTML equivalent) goes here -->
+      </div>
+      <div class="cartcontent">
+        <div class="forms">
+          <div class="form">
+            <span class="formtxt">Contact Information</span>
+
+            <div class="input1">
+              <div class="input11">
+                <label for="firstname">FIRST NAME</label>
+                <input type="text" placeholder="First Name" id="firstname" />
+              </div>
+
+              <div class="input11">
+                <label for="lastname">LAST NAME</label>
+                <input type="text" placeholder="Last Name" id="lastname" />
+              </div>
+            </div>
+
+            <div class="input">
+              <label for="phn">PHONE NUMBER</label>
+              <input type="text" placeholder="Phone Number" id="phn" />
+            </div>
+
+            <div class="input">
+              <label for="email">EMAIL ADDRESS</label>
+              <input type="text" placeholder="Your Email" id="email" />
+            </div>
+          </div>
+
+          <div class="form">
+            <span class="formtxt">Shipping Address</span>
+            <div class="input">
+              <label for="street">STREET ADDRESS*</label>
+              <input type="text" placeholder="Street Address" id="street" />
+            </div>
+
+            <div class="input">
+              <label for="country">COUNTRY</label>
+              <input type="text" placeholder="Country" id="country" />
+            </div>
+
+            <div class="input">
+              <label for="city">TOWN/CITY*</label>
+              <input type="text" placeholder="Town/City" id="city" />
+            </div>
+
+            <div class="input1">
+              <div class="input11">
+                <label for="state">STATE</label>
+                <input type="text" placeholder="State" id="state" />
+              </div>
+
+              <div class="input11">
+                <label for="ZIP">ZIP CODE</label>
+                <input type="text" placeholder="Zip Code" id="ZIP" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form">
+            <span class="formtxt">Payment method</span>
+            <div class="payment-option">
+              <input
+                type="radio"
+                id="credit"
+                value="credit card"
+                name="payment"
+                class="small"
+              />
+              <label for="credit">Cash on delivery</label>
+            </div>
+          </div>
+
+          <button onclick="navigate()">
+            <span class="buttontxt">Place Order</span>
+          </button>
+        </div>
+        <div class="ordersummary">
+          <span>Order Summary</span>
+          <div class="cardproducts">
+            <div class="product">
+              <div class="shopping-cart" id="shopping-cart"></div>
+            </div>
+          </div>
+          <div id="label"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- cart -->
+
+    <!-- footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="logo-link">
+          <div class="logo-slogan">
+            <span class="logo">3legant.</span>
+            <span class="rectangle">|</span>
+            <span class="slogan">Campus delivery system</span>
+            <div class="nav">
+              <a href="/home" class="navelements">Home</a>
+              <a href="/store" class="navelements">Stores</a>
+              <a href="/contactus" class="navelements">ContactUs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        <div class="copyright">
+          <span class="light"
+            >Copyright © 2023 3legant. All rights reserved</span
+          >
+          <span>Privacy Policy</span>
+          <span>Terms of Use</span>
+        </div>
+        <div class="icons">
+          <img src="assests/facebook.svg" />
+          <img src="assests/instagram.svg" />
+          <img src="assests/youtube.svg" />
+        </div>
+      </div>
+    </footer>
+
+    <!-- footer -->
+    <script>
+      function navigate() {
+        window.location.href = "received.html";
+      }
+    </script>
+
+    <script src="data.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>

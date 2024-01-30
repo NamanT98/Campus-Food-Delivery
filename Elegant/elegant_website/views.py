@@ -4,6 +4,8 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
 from .models import Product
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 # Create your views here.
 def index(request):
@@ -61,12 +63,17 @@ def contact(request):
     return render(request,'contactus.html')
 
 def store(request):
-    product=Product.objects.all()
-    return render(request,"store.html",{'product':product})
+    return render(request,"store.html")
 
 def cart(request):
     if request.user.is_authenticated:
         return render(request,"cart.html")
+    else:
+        return redirect('/login')
+    
+def ordercnf(request):
+    if request.user.is_authenticated:
+        return render(request,"ordercnf.html")
     else:
         return redirect('/login')
 
@@ -97,18 +104,41 @@ def account(request):
     else:
         return redirect('/login')
 
+def get_order(orders):
+    names={}
+    amount=0
+    for order in orders:
+        product=Product.objects.get(id=order['id'])
+        names[product.name]=order['item']
+        amount=amount+product.price*order['item']
+    a=""
+    for i in names.items():
+        a=a+"\n"+"\t"+i[0]+": "+str(i[1])
+    return a,amount
+@csrf_exempt
 def order(request):
     if request.user.is_authenticated:
         user=request.user
         if request.method == 'POST':
-            first_name=user.first_name
-            contact=request.POST['contact']
-            address=request.POST['address']
-            order_details={"name":first_name,"address":address,"contact":contact}
+            name=user.first_name
+            data=json.loads(request.body)
+            contact=data['contact']
+            address=data['address']
+            orders=data['order']
+            if orders ==[]:
+                return redirect('cart')
+            
+            order_names,amount=get_order(orders)
+            body=f'''Order has been placed with the following details:
+Name: {name}
+Address: {address}
+Contact: {contact}
+Order: {order_names}
+Total Amount: Rs. {amount}'''
             send_mail(subject="Order Confirmed",
-                      message=f"{order_details}",
+                      message=body,
                       from_email=settings.EMAIL_HOST_USER,
                       recipient_list=[user.email])
-            return render(request,"ordercnf.html")
+            return redirect('ordercnf')
     else:
         return redirect('/login')

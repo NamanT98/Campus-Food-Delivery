@@ -10,5 +10,6 @@ urlpatterns = [
     path('store',views.store,name='store'),
     path('cart',views.cart,name='cart'),
     path('account',views.account,name='account'),
-    path('order',views.order,name='order')
+    path('order',views.order,name='order'),
+    path('ordercnf',views.ordercnf,name='ordercnf')
     ]

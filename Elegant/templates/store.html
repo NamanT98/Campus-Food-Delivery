@@ -20,7 +20,11 @@
       </div>
       <div class="icons">
         <a href="account"><img src="{% static 'assets/account.svg' %}" /></a>
-        <a href="cart"><img src="{% static 'assets/cart.svg' %}" /></a>
+        <div>
+          <a href="cart"><img src="{% static 'assets/cart.svg' %}" /></a>
+          <div class="outer"></div>
+        </div>
+        <div class="ellipse" id="count"></div>
       </div>
     </div>
     <!-- Navigation bar -->
@@ -43,36 +47,7 @@
     <!-- product -->
     <div class="products">
       <div class="sidebar"></div>
-      <div class="grids">
-        {% for dish in product %}
-        <div class="card">
-          <div class="elements">
-            <div class="imageplaceholder">
-              <img class="dishimg" src="{{dish.image}}" />
-            </div>
-          </div>
-          <div class="bottomcontent">
-            <div class="content">
-              <div class="contenttxt">
-                <div class="ratings">
-                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
-                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
-                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
-                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
-                  <img src="{% static 'assets/ratingrating-group.svg' %}" />
-                </div>
-                <span class="dish">{{dish.name}}</span>
-                <div class="price">
-                  <span class="discount">₹{{dish.price}}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <button>Add to cart</button>
-        </div>
-        {% endfor %}
-      </div>
+      <div class="grids" id="shop"></div>
     </div>
 
     <!-- product -->
@@ -110,5 +85,7 @@
     </footer>
 
     <!-- footer -->
+    <script src="{% static 'js/data.js' %}"></script>
+    <script src="{% static 'js/store.js' %}"></script>
   </body>
 </html>
